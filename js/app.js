@@ -31,7 +31,7 @@ Enemy.prototype.update = function(dt) {
 	){
 		player.x = 400;
 		player.y = 400;
-		alert("hit!");
+		//alert("hit!");
 	}
 };
 
@@ -57,7 +57,7 @@ Player.prototype.update = function(dt) {
     //updates the player location
     //handle collision with the enemy
 	if(this.y === 25){
-		alert('reached water');
+		bringUpModal();
 		this.y = 400;
 	}
 };
@@ -111,6 +111,22 @@ Player.prototype.handleInput = function(allowedKeys){
 		}
   
 };
+
+//Modal code
+
+const giantX = document.querySelector('.giantX');
+const modal = document.getElementById('myModal');
+
+giantX.addEventListener('click', function() {
+    modal.classList.remove('modal-visible');
+});
+
+function bringUpModal() {
+  
+
+    modal.classList.add('modal-visible');
+}
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

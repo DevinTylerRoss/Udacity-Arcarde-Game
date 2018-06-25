@@ -1,3 +1,47 @@
 body {
     text-align: center;
 }
+
+
+/*
+MODAL STYLES
+*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 50%;
+  height: 60%;
+  overflow: auto;
+  background-color: #aa7ecd;
+  color: white;
+  padding: 10px;
+  bottom: 150px;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+.modal-visible {
+  display: block;
+}
+
+.modal-content {
+
+  margin: 0 auto;
+  padding: 30px;
+
+  width: 80%;
+}
+
+.giantX {
+  color: pink;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.giantX:hover, .giantX:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
