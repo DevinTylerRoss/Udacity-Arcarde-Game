@@ -12,4 +12,26 @@ Click the link below to play in browser!
 
 [Udacity Arcade Game](https://devintylerross.github.io/Udacity-Arcarde-Game/) 
 
-The goal of the game is to get your character to water while avoiding the bugs. The player can move in all directions and colliding with the bugs causes the player position to reset to the begining point. 
+The goal of the game is to get your character to water while avoiding the bugs. The player can move in all directions using keyboard arrow keys. Colliding with the bugs causes the player position to reset to the begining point. 
+
+Code Dependancies 
+===============================
+
+Just Javascript, CSS and HTML. Files called engine.js and resources.js provided by Udacity. 
+
+
+License
+===============================
+
+
+MIT Devin Tyler Ross
+
+
+Resources Consulted for this Project
+===============================
+
+[Webinar Arcade Game Project created by @Rodrick FEND](https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000)
+
+[Video: JS, Objects & Object Types, OOP, Prototypes created by @RyanWaite](https://youtu.be/0ovAyu3ZvFQ)
+
+[MDN Web Docs: 2D Collision Detection](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
