@@ -1,8 +1,6 @@
 // Enemies our player must avoid
 var Enemy = function(x,y, speed) {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-
+    
     //set enemy initial location
     this.x = x;
     this.y = y;
@@ -17,15 +15,15 @@ var Enemy = function(x,y, speed) {
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
+    
     this.x += this.speed * dt;
-    // which will ensure the game runs at the same speed for
-    // all computers.
-    //updates the enemy location
-    if(this.x > 400){
-      this.x = -50;
+    
+    //updates the enemy location so they can cross the screen again
+    if(this.x > 500){
+      this.x = -75;
     }
-    //handle collision with the player
+    // Handles collision with the player. Player position reset if bugs are touched
+	// Credit due to this resource: MDN Web Docs @ https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 	if( player.x < this.x + 60 && player.x + 37 > this.x &&
 		player.y < this.y + 25 && 30 + player.y > this.y 
 	){
@@ -35,14 +33,12 @@ Enemy.prototype.update = function(dt) {
 	}
 };
 
-// Draw the enemy on the screen, required method for game
+// Draws an enemy on screen
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+// Creates Player class
 var Player = function (x,y,speed) {
   this.sprite = "images/char-cat-girl.png";
   this.x = x;
@@ -50,18 +46,16 @@ var Player = function (x,y,speed) {
   this.speed = speed;
 }
 
+// Triggers modal popup when player reaches the water
 Player.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-    //updates the player location
-    //handle collision with the enemy
+    
 	if(this.y === 25){
 		bringUpModal();
 		this.y = 400;
 	}
 };
 
+// Draws player on screen
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -69,9 +63,9 @@ Player.prototype.render = function() {
 
 // Now instantiate your objects.
 
-const enemy1 = new Enemy(50, 150, 100);
+const enemy1 = new Enemy(25, 150, 100);
 
-const enemy2 = new Enemy(75, 75, 50);
+const enemy2 = new Enemy(25, 75, 50);
 
 const enemy3 = new Enemy(25, 25, 150);
 
@@ -83,31 +77,25 @@ let allEnemies = [enemy1, enemy2, enemy3, enemy4];
 let player = new Player(400, 400, 20);
 
 
-
+// Connects keyboard input to player movement
+// If statements prevent player movement off screen
 Player.prototype.handleInput = function(allowedKeys){
   
   if(allowedKeys === 'down' && this.y < 425){
     this.y += 25;
-	console.log(this.x);
-	console.log(this.y);
+	
   }
 
 		if (allowedKeys === 'up'){
 			this.y -= 25;
-			console.log(this.x);
-	console.log(this.y);
 		}
 		
 		if(allowedKeys === 'left' && this.x > 0){
 			this.x -= 25;
-			console.log(this.x);
-	console.log(this.y);
 		}
 		
 		if(allowedKeys === 'right' && this.x < 400){
 			this.x += 25;
-			console.log(this.x);
-	console.log(this.y);
 		}
   
 };
@@ -129,7 +117,7 @@ function bringUpModal() {
 
 
 // This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// Player.handleInput() method.
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
