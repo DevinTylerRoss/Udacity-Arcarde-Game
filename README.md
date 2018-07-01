@@ -35,3 +35,5 @@ Resources Consulted for this Project
 [Video: JS, Objects & Object Types, OOP, Prototypes created by @RyanWaite](https://youtu.be/0ovAyu3ZvFQ)
 
 [MDN Web Docs: 2D Collision Detection](https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection)
+
+[Stackoverflow: Adding collision detection to images drawn on canvas](https://stackoverflow/questions/13916966/adding-collision-detection-to-images-drawn-on-canvas)
