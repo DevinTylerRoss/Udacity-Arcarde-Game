@@ -10,8 +10,8 @@ MODAL STYLES
   display: none;
   position: fixed;
   z-index: 1;
-  width: 50%;
-  height: 60%;
+  width: 25%;
+  height: 25%;
   overflow: auto;
   background-color: #aa7ecd;
   color: white;
@@ -19,6 +19,7 @@ MODAL STYLES
   bottom: 150px;
   border: 5px solid white;
   border-radius: 10px;
+  left: 350px;
 }
 
 .modal-visible {
