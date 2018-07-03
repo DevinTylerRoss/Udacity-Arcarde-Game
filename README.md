@@ -12,6 +12,8 @@ Click the link below to play in browser!
 
 [Udacity Arcade Game](https://devintylerross.github.io/Udacity-Arcarde-Game/) 
 
+Or, to run the game locally please open index.html in a browser
+
 The goal of the game is to get your character to water while avoiding the bugs. The player can move in all directions using keyboard arrow keys. Colliding with the bugs causes the player position to reset to the begining point. 
 
 Code Dependancies 

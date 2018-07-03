@@ -1,3 +1,5 @@
+"use strict"
+
 // Enemies our player must avoid
 var Enemy = function(x,y, speed) {
     
@@ -24,10 +26,10 @@ Enemy.prototype.update = function(dt) {
     }
     // Handles collision with the player. Player position reset if bugs are touched
 	// Credit due to this resource: MDN Web Docs @ https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-	if( player.x < this.x + 60 && player.x + 37 > this.x &&
-		player.y < this.y + 25 && 30 + player.y > this.y 
+	if( player.x < this.x + 70 && player.x + 17 > this.x &&
+		player.y < this.y + 45 && 30 + player.y > this.y 
 	){
-		player.x = 400;
+		player.x = 200;
 		player.y = 400;
 		
 	}
@@ -74,7 +76,7 @@ const enemy4 = new Enemy(25, 225, 200);
 // Place all enemy objects in an array called allEnemies
 let allEnemies = [enemy1, enemy2, enemy3, enemy4];
 // Place the player object in a variable called player
-let player = new Player(400, 400, 20);
+let player = new Player(200, 400, 20);
 
 
 // Connects keyboard input to player movement
